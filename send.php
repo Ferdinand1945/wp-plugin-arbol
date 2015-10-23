@@ -19,5 +19,7 @@ $asunto = 'Asunto del mail recibido';
 
 mail($para, $asunto, utf8_decode($mensaje), $header);
 
-echo 'Mensaje enviado correctamente';
+echo 'Ditt meddelande har skickats, vi kommer att kontakta dig inom kort!';
+sleep(3);
+header('location: index.php');
 ?>
