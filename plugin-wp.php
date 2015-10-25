@@ -8,7 +8,6 @@ width:1180px;
 background-color: #eee;
 margin: 7px;
 padding: 4px;
-
 }
 .form label {
 display: inline-flex;
@@ -20,21 +19,22 @@ font-size: 15px;
 }
 
 .red {
-color: #F00;
+color: #000;
 font-size: 21px;
 background-color: #EBEBEB;
 width: 270px;
 padding: 21px;
-border: 1px dashed #000000;
+border: 1px solid #000000;
 text-align: center;
 font-weight: bold;
+margin:1px;
 }
 
 .inline {
 display: inline-block;
-margin-top: 30px;
+margin: 7px 7px 7px 7px;
 background-color: #eee;
-height: 160px;
+min-height: 160px;
 width: 270px;
 border: 1px dashed #e0e0e0;
 }
@@ -51,24 +51,63 @@ margin: 0px 0px 0px;
 .green {
 color: #2ECC71;
 font-size: 21px;
-background-color: #000000;
 padding: 9px;
 border: 1px solid rgb(0, 0, 0);
 text-align: left;
 display: inline-block;
 margin: 1px;
+float: left;
+width: 270px;
+}
 
-}
-display: inline-flex;
-}
 .lista {
-width: 500px;
+width: 550px;
+    float: left;
+}
+h2 {   
+ font-weight: 300;
 }
 
+.green-price {
+color: #2ECC71;
+    font-size: 21px;
+    padding: 9px;
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+    display: inline-block;
+    margin: 1px;
+width: 270px;
+}
+.header_color .main_menu .menu ul li a:hover, .header_color .av-subnav-menu ul a:hover {
+    background-color: #61E168;
+}
+.main_color .primary-background, .main_color .primary-background a, div .main_color .button, .main_color #submit, .main_color input[type="submit"], .main_color .small-preview:hover, .main_color .avia-menu-fx, .main_color .avia-menu-fx .avia-arrow, .main_color.iconbox_top .iconbox_icon, .main_color .iconbox_top a.iconbox_icon:hover, .main_color .avia-data-table th.avia-highlight-col, .main_color .avia-color-theme-color, .main_color .avia-color-theme-color:hover, .main_color .image-overlay .image-overlay-inside::before, .main_color .comment-count, .main_color .av_dropcap2, #top #wrap_all .main_color .av-menu-button-colored > a .avia-menu-text, .main_color .av-colored-style .av-countdown-cell-inner, .responsive #top .main_color .av-open-submenu.av-subnav-menu > li > a:hover, #top .main_color .av-open-submenu.av-subnav-menu li > ul a:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+  visibility: hidden;
+}
+
+.main_color, .main_color div, .main_color header, .main_color main, .main_color aside, .main_color footer, .main_color article, .main_color nav, .main_color section, .main_color span, .main_color applet, .main_color object, .main_color iframe, .main_color h1, .main_color h2, .main_color h3, .main_color h4, .main_color h5, .main_color h6, .main_color p, .main_color blockquote, .main_color pre, .main_color a, .main_color abbr, .main_color acronym, .main_color address, .main_color big, .main_color cite, .main_color code, .main_color del, .main_color dfn, .main_color em, .main_color img, .main_color ins, .main_color kbd, .main_color q, .main_color s, .main_color samp, .main_color small, .main_color strike, .main_color strong, .main_color sub, .main_color sup, .main_color tt, .main_color var, .main_color b, .main_color u, .main_color i, .main_color center, .main_color dl, .main_color dt, .main_color dd, .main_color ol, .main_color ul, .main_color li, .main_color fieldset, .main_color form, .main_color label, .main_color legend, .main_color table, .main_color caption, .main_color tbody, .main_color tfoot, .main_color thead, .main_color tr, .main_color th, .main_color td, .main_color article, .main_color aside, .main_color canvas, .main_color details, .main_color embed, .main_color figure, .main_color fieldset, .main_color figcaption, .main_color footer, .main_color header, .main_color hgroup, .main_color menu, .main_color nav, .main_color output, .main_color ruby, .main_color section, .main_color summary, .main_color time, .main_color mark, .main_color audio, .main_color video, #top .main_color .pullquote_boxed, .responsive #top .main_color .avia-testimonial, .responsive #top.avia-blank #main .main_color.container_wrap:first-child, #top .main_color.fullsize .template-blog .post_delimiter, .main_color .related_posts.av-related-style-full a {
+    border-color: #000;
+}
+
+.grid-image img {
+    display: block;
+    padding: 45px;
+    width: 100%;
+}
+.button-custom {
+background-color: #000;
+padding: 14px;
+color: #fff;
+border: 1px solid #000;
+font-size: 17px;
+cursor: pointer;
+}
 /* mediaquery*/
 
-@media screen and (max-width: 500px) {
-
+@media screen and (max-width: 300px) {
 .inline {
 display: block;
 height: 200px;
@@ -76,18 +115,9 @@ padding: 0 10px;
 }
 }
 
-}
-@media screen and (min-width: 1100px){
-.form-selection {
-margin-top: -100px;
-}
-}
-.form-selection{
-float:right;
-}
 </style>-->
 
-[insert_php]
+[insert_php] 
 
 if(isset($_POST['submit'])){
 
@@ -115,12 +145,10 @@ $suma += $valor; // Va sumando los valores
 
 echo '
 <div class="red">Totalpris: ' .$suma. ' kr</div>
-</div>
-';
+</div>';
 
 
-echo '
-<form id="contacto" name="contacto" action="http://arbol.se/send.php" method="POST">
+echo '<form id="contacto" name="contacto" action="http://arbol.se/send.php" method="POST">
 <p>
 <label>Namn <input name="nombre" type="text" id="nombre"
  size="42"/></label>
@@ -135,15 +163,13 @@ echo '
 <textarea name="mensaje" cols="40" rows="8" id="mensaje">
 </textarea></label>
 </p>
-<p><input type="submit" name="Submit" value="Enviar"/></p>
-</form>
-';
+<p><button class="button-custom" type="submit" name="Submit" value="Enviar"/>Skicka din förslag</button></p>
+</form>';
 
-}
-
-
+}   
 
 [/insert_php]
+
 <div class="form"><form class="form" action="" method="post" name="form1">
 <div class="pull-down"></div>
 <div class="titulo">
@@ -272,6 +298,6 @@ Fotografering - 1500kr</label>
 </div>
 <div class="pull-up"></div>
 <div class="pull-down"></div>
-<input class="button-calculate" name="submit" type="submit" value="Beräkna kostnaden" />
+  <button class="button-custom" name="submit" type="submit" value="Beräkna kostnaden" />Beräkna kostnaden</button>
 
 </form></div>
